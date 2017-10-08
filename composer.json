@@ -1,6 +1,6 @@
 {
     "name": "web-token/jwt-signature",
-    "description": "Core component of the JWT Framework.",
+    "description": "Signature component of the JWT Framework.",
     "type": "library",
     "license": "MIT",
     "keywords": ["JWS", "JWT", "JWE", "JWA", "JWK", "JWKSet", "Jot", "Jose", "RFC7515", "RFC7516", "RFC7517", "RFC7518", "RFC7519", "RFC7520", "Bundle", "Symfony"],
