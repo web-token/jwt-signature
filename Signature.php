@@ -9,15 +9,22 @@ use InvalidArgumentException;
 
 class Signature
 {
-    private ?string $encodedProtectedHeader;
+    private readonly ?string $encodedProtectedHeader;
 
-    private array $protectedHeader;
+    /**
+     * @var array<string, mixed>
+     */
+    private readonly array $protectedHeader;
 
+    /**
+     * @param array<string, mixed> $protectedHeader
+     * @param array<string, mixed> $header
+     */
     public function __construct(
-        private string $signature,
+        private readonly string $signature,
         array $protectedHeader,
         ?string $encodedProtectedHeader,
-        private array $header
+        private readonly array $header
     ) {
         $this->protectedHeader = $encodedProtectedHeader === null ? [] : $protectedHeader;
         $this->encodedProtectedHeader = $encodedProtectedHeader;
@@ -25,6 +32,8 @@ class Signature
 
     /**
      * The protected header associated with the signature.
+     *
+     * @return array<string, mixed>
      */
     public function getProtectedHeader(): array
     {
@@ -33,6 +42,8 @@ class Signature
 
     /**
      * The unprotected header associated with the signature.
+     *
+     * @return array<string, mixed>
      */
     public function getHeader(): array
     {
